@@ -1,10 +1,11 @@
-// import React from 'react'
-// import ReactDOM from 'react-dom'
-// import Highcharts from 'highcharts'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Highcharts from 'highcharts'
 
 class PercentageArea extends React.Component {
   componentDidMount() {
     this.drow(this.props)
+    
   }
 
   componentWillReceiveProps(nextProps, nextState) {
@@ -12,14 +13,12 @@ class PercentageArea extends React.Component {
     this.drow(nextProps)
   }
 
-  shouldComponentUpdate() {
-  	return false
-  }
+ 
 
   componentWillUnmount() {
     this.chart.destroy()
   }
-
+ 
   drow(props) {
 		this.chart = Highcharts.chart(this.container, {
       chart: {
@@ -63,7 +62,7 @@ class PercentageArea extends React.Component {
     return <div className="chart" ref={ref => this.container = ref} />
   }
 }
-
+console.log(this.point);
 const title = 'Historic and Estimated Worldwide Population Distribution by Region'
 const data = [{
   name: 'Asia',
